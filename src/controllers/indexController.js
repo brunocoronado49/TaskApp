@@ -8,7 +8,6 @@ indexController.renderIndex = async (req, res) => {
     
     console.log(tasks)
     res.render('index', { tasks: tasks })
-    
 }
 
 indexController.renderAbout = (req, res) => {
