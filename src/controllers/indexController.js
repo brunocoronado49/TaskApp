@@ -36,5 +36,11 @@ indexController.deleteTask = async (req, res) => {
     res.redirect('/')
 }
 
-export default indexController
+indexController.toggleDone = async (req, res) => {
+    const task = await Task.findById(req.params.id)
+    task.done = !task.done
+    await task.save()
+    res.redirect('/')
+}
 
+export default indexController
