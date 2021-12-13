@@ -21,12 +21,19 @@ indexController.saveTask = async (req, res) => {
     res.redirect('/')
 }
 
-indexController.renderEdit = (req, res) => {
-    res.render('edit')
+indexController.renderEdit = async (req, res) => {
+    const task = await Task.findById(req.params.id).lean()
+    res.render('edit', { task: task })
 }
 
 indexController.updateTask = async (req, res) => {
+    await Task.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect('/')
+}
 
+indexController.deleteTask = async (req, res) => {
+    await Task.findByIdAndDelete(req.params.id)
+    res.redirect('/')
 }
 
 export default indexController

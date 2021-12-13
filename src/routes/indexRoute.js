@@ -14,4 +14,6 @@ router.get("/edit/:id", indexController.renderEdit);
 
 router.post('/update/:id', indexController.updateTask)
 
+router.delete('/delete/:id', indexController.deleteTask)
+
 export default router
