@@ -1,13 +1,17 @@
 import { Router } from 'express'
+import indexController from '../controllers/indexController'
+
 
 const router = Router()
 
-router.get("/", (req, res) => {
-    res.render()
-});
+router.get("/", indexController.renderIndex);
 
-router.get("/about", (req, res) => {
-    res.send("About");
-});
+router.post("/task/add", indexController.saveTask);
+
+router.get("/about", indexController.renderAbout);
+
+router.get("/edit/:id", indexController.renderEdit);
+
+router.post('/update/:id', indexController.updateTask)
 
 export default router

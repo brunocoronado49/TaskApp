@@ -4,4 +4,5 @@
 4. Install BabelJs for import the files js ( compiler for js )
 5. config the file for babel (.babelrc)
 6. for execute the file index.js is: npx babel-node src/index.js
-7. Change the config for include babel-node in the scripts
+7. Change the config for include babel-node in the scripts and execute
+8. Continue whit the code
